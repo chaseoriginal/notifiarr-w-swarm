@@ -4,17 +4,18 @@ services:
     hostname: ${hostname}
     image: ${image}
     ports:
-      - target: 5454
-        published: 5454
-        protocol: tcp
-        mode: host        
+    - target: 5454
+      published: 5454
+      protocol: tcp
+      mode: host
     deploy:
       placement:
         constraints:
-          - node.labels.deployment.target.notifiarr == true
+        - node.labels.deployment.target.notifiarr == true
       restart_policy:
         condition: any
     volumes:
-      - /var/lib/docker/volumes/${container_name}/config:/config
-      - /var/run/utmp:/var/run/utmp
-      - /etc/machine-id:/etc/machine-id
+    - /var/lib/docker/volumes/notifiarr-w-swarm/config:/config
+    - /var/run/utmp:/var/run/utmp
+    - /etc/machine-id:/etc/machine-id
+volumes: {}
