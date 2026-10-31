@@ -18,5 +18,4 @@ services:
     - /var/lib/docker/volumes/notifiarr-w-swarm/config:/config
     - /var/run/utmp:/var/run/utmp
     - /etc/machine-id:/etc/machine-id
-    environment: null
 volumes: {}
